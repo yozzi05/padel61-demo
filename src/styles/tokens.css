@@ -1,0 +1,87 @@
+/* ───────────────────────────────────────────────
+   PADEL 61 — design tokens
+   Court geometry → 1px lines, square corners, scoreboard numerals.
+   ─────────────────────────────────────────────── */
+:root {
+  /* Color */
+  --c-paper: #F4F1E8;        /* warm sport off-white */
+  --c-paper-2: #ECE7DA;      /* sunk surface */
+  --c-sand: #D8CDB7;         /* clay */
+  --c-ink: #151713;          /* deep near-black */
+  --c-ink-2: #1D201B;        /* raised dark surface */
+  --c-ink-3: #2A2E27;
+  --c-lime: #B8ED48;         /* padel green */
+  --c-lime-dim: #9BCB33;
+  --c-pine: #263D2B;         /* secondary green */
+  --c-white: #FFFFFF;
+  --c-muted: #777A72;
+  --c-muted-dark: #9A9D94;   /* muted on dark */
+  --c-red: #E65A46;          /* errors / loss only */
+
+  --line: rgba(21, 23, 19, 0.14);
+  --line-2: rgba(21, 23, 19, 0.28);
+  --line-strong: #151713;
+  --line-dark: rgba(244, 241, 232, 0.12);
+  --line-dark-2: rgba(244, 241, 232, 0.24);
+
+  /* Type */
+  --f-display: "Archivo", "Roboto Flex", "Arial Narrow", sans-serif;
+  --f-ui: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Display scale (Archivo, condensed via font-stretch) */
+  --t-mega: clamp(88px, 15.5vw, 236px);
+  --t-h1: clamp(52px, 7.6vw, 110px);
+  --t-h2: clamp(40px, 5.4vw, 80px);
+  --t-h3: clamp(28px, 3vw, 44px);
+  --t-h4: clamp(22px, 2vw, 28px);
+  --t-num-xl: clamp(56px, 6.4vw, 96px);
+  --t-num-l: clamp(36px, 3.6vw, 52px);
+
+  /* UI scale (Manrope) */
+  --t-lead: clamp(17px, 1.35vw, 20px);
+  --t-body: 16px;
+  --t-sm: 14px;
+  --t-xs: 12px;
+  --t-micro: 11px;
+
+  /* Spacing — 4px base */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+
+  --gutter: clamp(16px, 3.2vw, 48px);
+  --section-y: clamp(72px, 9vw, 136px);
+  --max: 1440px;
+  --header-h: 64px;
+  --bottom-nav-h: 0px;
+
+  /* Shape — the court is rectangular. Radius is the exception, not the rule. */
+  --r-0: 0;
+  --r-1: 2px;
+  --r-2: 4px;
+  --r-pill: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --d-fast: 160ms;
+  --d-base: 280ms;
+  --d-slow: 700ms;
+
+  --focus: 0 0 0 2px var(--c-paper), 0 0 0 4px var(--c-ink);
+  --focus-dark: 0 0 0 2px var(--c-ink), 0 0 0 4px var(--c-lime);
+}
+
+@media (max-width: 860px) {
+  :root {
+    --header-h: 56px;
+    --bottom-nav-h: 64px;
+  }
+}

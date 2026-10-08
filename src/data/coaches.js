@@ -1,0 +1,103 @@
+// Coaches — padel61.ru ("Персональная тренировка", "Групповые тренировки").
+// Prices are per hour. group[n] = price for a group of n players; null = not listed on the site.
+const ALL_LEVELS = ["D", "C", "C+", "B", "B+", "A"];
+
+export const coaches = [
+  {
+    id: "igor-smolich",
+    first: "Игорь",
+    last: "Смолич",
+    category: "PRO",
+    country: "Россия",
+    countryCode: "RU",
+    languages: ["RU", "EN"],
+    levels: ALL_LEVELS,
+    price: 3500,
+    group: { 2: 4000, 3: 4000, 4: 3500 },
+    img: "assets/photos/coach-igor.jpg",
+  },
+  {
+    id: "mark-smolich",
+    first: "Марк",
+    last: "Смолич",
+    category: "PRO",
+    country: "Россия",
+    countryCode: "RU",
+    languages: ["RU", "EN"],
+    levels: ALL_LEVELS,
+    price: 3500,
+    group: { 2: 4000, 3: 4000, 4: null },
+    img: "assets/photos/coach-mark.jpg",
+  },
+  {
+    id: "nikolay-merkulov",
+    first: "Николай",
+    last: "Меркулов",
+    category: "PRO",
+    country: "Россия",
+    countryCode: "RU",
+    languages: ["RU", "EN"],
+    levels: ALL_LEVELS,
+    price: 3500,
+    group: { 2: 3500, 3: 4000, 4: 4000 },
+    img: "assets/photos/coach-nikolay.jpg",
+  },
+  {
+    id: "eva-bragar",
+    first: "Ева",
+    last: "Брагарь",
+    category: "II",
+    country: "Россия",
+    countryCode: "RU",
+    languages: ["RU", "EN"],
+    levels: ALL_LEVELS,
+    price: 3000,
+    group: { 2: 3000, 3: 4000, 4: 4000 },
+    img: "assets/photos/coach-eva.jpg",
+  },
+  {
+    id: "ekaterina-karpenko",
+    first: "Екатерина",
+    last: "Карпенко",
+    category: "II",
+    country: "Россия",
+    countryCode: "RU",
+    languages: ["RU", "EN"],
+    levels: ALL_LEVELS,
+    price: 3000,
+    group: { 2: 3000, 3: null, 4: null },
+    img: "assets/photos/coach-ekaterina.jpg",
+  },
+  {
+    id: "diego",
+    first: "Диего",
+    last: "",
+    category: "II",
+    country: "Эквадор",
+    countryCode: "EC",
+    languages: ["EN", "ES"],
+    levels: ALL_LEVELS,
+    price: 3000,
+    group: { 2: null, 3: null, 4: null },
+    img: "assets/photos/coach-diego.jpg",
+  },
+  {
+    id: "ruben-alkivar",
+    first: "Рубен",
+    last: "Алкивар",
+    category: "II",
+    country: "Эквадор",
+    countryCode: "EC",
+    languages: ["EN", "ES"],
+    levels: ALL_LEVELS,
+    price: 3000,
+    group: { 2: null, 3: null, 4: null },
+    img: "assets/photos/coach-ruben.jpg",
+  },
+];
+
+export const categoryLabel = (c) => (c === "PRO" ? "PRO категория" : "2 категория");
+export const categoryShort = (c) => (c === "PRO" ? "PRO" : "CAT II");
+export const coachName = (c) => [c.first, c.last].filter(Boolean).join(" ");
+export const coachById = (id) => coaches.find((c) => c.id === id);
+export const hasGroup = (c) => Object.values(c.group).some(Boolean);
